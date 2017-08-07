@@ -89,7 +89,7 @@
                 <formatter>
                     <named-formatter name="PATTERN"/>
                 </formatter>
-                <file relative-to="jboss.server.log.dir" path="${HOSTNAME}/server.log"/>
+                <file relative-to="jboss.server.log.dir" path="${env.HOSTNAME}/server.log"/>
                 <suffix value=".yyyy-MM-dd"/>
                 <append value="true"/>
             </periodic-rotating-file-handler>
@@ -481,7 +481,7 @@
                 <!-- No HTTPS configuration discovered -->
                 <host name="default-host" alias="localhost">
                     <location name="/" handler="welcome-content"/>
-                    <access-log directory="${jboss.server.log.dir}/${HOSTNAME}" pattern="%a %t %H %p %U %s %S %T"/>
+                    <access-log directory="${jboss.server.log.dir}/${env.HOSTNAME}" pattern="%a %t %H %p %U %s %S %T"/>
                     <filter-ref name="server-header"/>
                     <filter-ref name="x-powered-by-header"/>
                 </host>
