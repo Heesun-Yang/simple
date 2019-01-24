@@ -2,7 +2,8 @@ node('maven') {
   stage('Build') {
     sh " oc whoami"
     sh " pwd ; id;"
-    git url: "http://gitlab.octest.sec.samsung.com/octest/test-eap-pipeline.git"
+    git ref: pipeline
+    git url: "https://github.com/Heesun-Yang/simple.git"
     sh "mvn package"
     sh "ls  *"
   }
